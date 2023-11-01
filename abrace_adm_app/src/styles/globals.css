@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* IMAGE MODIFICATIONS */
+body{
+  background-image: linear-gradient(-45deg, #9cce76a0, #b2d380a0, #c5d98ca0, #d7de9aa0, #e6e4a9a0, #e0e6b0a0, #dae8b7a0, #d6eabea0, #bde6c3a0, #a7e1cba0, #96dbd4a0, #8cd3dca0 );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.img_36px{
+  height: 36px;
+  width: 36px;
+}
+
+.img_48px{
+  height: 48px;
+  width: 48px;
+}
+
+.img_33vw{
+  height: 33vw;
+  width: 33vw;
+}
+
+
+
+/* POSITIONING  */
+
