@@ -261,7 +261,7 @@ const Header = () => {
         <Flex align="center" justify="between" gap="5">
           <Link href="/">
             <NextImage
-              className="w-16 h-16"
+              className="w-16 "
               alt="Logo da ABRACE"
               src={ABRACE}
             />

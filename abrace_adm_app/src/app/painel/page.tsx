@@ -11,8 +11,11 @@ import {
 } from "@radix-ui/themes";
 
 import { BarChartIcon } from "@radix-ui/react-icons";
-import NextImage from "next/image";
 import React from "react";
+import RevenueCard from "@/components/RevenueCard/RevenueCard";
+import AdoptionCard from "@/components/AdoptionCard/AdoptionCard";
+import UsersCard from "@/components/UsersCard/UsersCard";
+import KanBanBoardCard from "@/components/KanbanBoardCard/KanBanBoardCard";
 
 const page = () => {
   return (
@@ -30,37 +33,18 @@ const page = () => {
 
         <Box px="4" pt="3" pb="2">
           <Tabs.Content value="resumo">
-            <Flex direction="column" align="center" justify="between" gap="5">
-              <Box className="w-full h-1/5">
-                <Flex
-                  direction="row"
-                  justify="between"
-                  align="center"
-                  gap="5"
-                >
-                  <Card className="w-2/5 h-full">card1</Card>
-                  <Card className="w-2/5 h-full">card2</Card>
-                  <Card className="w-2/5 h-full">card3</Card>
-                  <Card className="w-2/5 h-full">card4</Card>
+            <Flex direction="column" align="center" justify="between" gap="5" wrap='wrap'>
+              <Box className="w-full h-fit min-h-[300px]">
+                <Flex direction="row" justify="between" align="center" gap="2" wrap='wrap'>
+                  <RevenueCard />
+                  <AdoptionCard />
+                  <UsersCard />
                 </Flex>
-              </Box>
-              <Box className="w-full h-1/5">
-                <Flex
-                  direction="row"
-                  justify="between"
-                  align="center"
-                  gap="5"
-                >
-                  <Card className="w-3/5 h-full">card1</Card>
-                  <Card className="w-3/5 h-full">card2</Card>
-                  <Card className="w-3/5 h-full">card3</Card>
-                 
-                </Flex>
-              </Box>
-              <Box className="w-full h-1/5">
-              <Card className="w-full h-full">card1</Card>
               </Box>
 
+              <Box className="w-full h-fit">
+                <KanBanBoardCard />
+              </Box>
             </Flex>
           </Tabs.Content>
 

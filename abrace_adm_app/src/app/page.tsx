@@ -42,7 +42,7 @@ const Home = () => {
           </Heading>
           <Text as="div" align="center" size='6' weight='medium' color="lime">
             O acesso à plataforma administrativa<strong> ABRACE</strong> é restrito aos
-            adminstradores da OGN. Por favor faça seu login na plataforma.
+            adminstradores da ONG. Por favor faça seu login na plataforma.
           </Text>
           
         </Flex>
