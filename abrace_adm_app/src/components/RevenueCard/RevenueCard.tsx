@@ -87,7 +87,7 @@ const data = {
 const RevenueCard = () => {
   return (
     <Card className="w-fit h-fit">
-      <Inset clip="padding-box" side="top" pb="current" className="h-[300px] ">
+      <Inset clip="padding-box" side="top" pb="current" className="h-[250px] ">
         <Bar
           options={options}
           data={data}

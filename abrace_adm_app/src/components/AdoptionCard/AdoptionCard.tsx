@@ -87,7 +87,7 @@ const AdoptionCard = () => {
         clip="padding-box"
         side="top"
         pb="current"
-        className="h-[300px] "
+        className="h-[250px] "
       >
         <Bar
           options={options}

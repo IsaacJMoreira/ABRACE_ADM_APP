@@ -77,6 +77,9 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
             <Text as="div" size={"1"}>
               Marcar como:
             </Text>
+            <Button size={"1"} color="tomato" className="w-full">
+              Não Atendido
+            </Button>
 
             <Button size={"1"} color="amber" className="w-full">
               Atendendo
