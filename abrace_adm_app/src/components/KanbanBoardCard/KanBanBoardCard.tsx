@@ -34,7 +34,7 @@ const KanBanBoardCard = () => {
         >
           <Card
             variant="ghost"
-            className="m-2 w-2/5 bg-gradient-to-br from-[#F3B4B0] to-[#e66a63]"
+            className="m-1 w-2/5 bg-gradient-to-br from-[#F3B4B0] to-[#e66a63]"
           >
             <Flex direction="column" align="center" justify="between" gap="3">
               <Heading size="5" align="center" color="tomato">
@@ -64,7 +64,7 @@ const KanBanBoardCard = () => {
             </Flex>
           </Card>
           <Card
-            className="w-2/5 bg-gradient-to-br from-[#FFF9C4] to-[#F7EB7Af0]"
+            className=" m-1  w-2/5 bg-gradient-to-br from-[#FFF9C4] to-[#F7EB7Af0]"
             variant="ghost"
           >
             <Flex direction="column" align="center" justify="between" gap="3">
@@ -110,7 +110,7 @@ const KanBanBoardCard = () => {
             </Flex>
           </Card>
           <Card
-            className="w-2/5 bg-gradient-to-br from-[#EAF4E3] to-[#96D279]"
+            className=" m-1 w-2/5 bg-gradient-to-br from-[#EAF4E3] to-[#96D279]"
             variant="ghost"
           >
             <Flex direction="column" align="center" justify="between" gap="3">
@@ -200,7 +200,6 @@ const KanBanBoardCard = () => {
                       date={`${dia}/${mes}/${ano}`}
                       type="donation"
                     />
-                    
                   </Flex>
                 </Box>
               </ScrollArea>
