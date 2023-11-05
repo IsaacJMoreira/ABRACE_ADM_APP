@@ -30,7 +30,7 @@ interface MyProps {
   neighborhood: string;
   city: string;
   state: string;
-  complement?: string;
+  complement: string;
   linkToMaps: string;
   contact?: string;
   onClickFunction: MouseEventHandler<HTMLButtonElement>;

@@ -284,6 +284,7 @@ const DonationLocationsCard = () => {
                   neighborhood={location.neighborhood}
                   city={location.city}
                   state={location.state}
+                  complement={location.complement}
                   linkToMaps={location.linkToMaps}
                   onClickFunction={() =>
                     setLocations(deleteLocation(locations, location))
