@@ -74,7 +74,7 @@ const addNewPlace = (
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button size="1" color="lime">
+        <Button size="1" color="lime" variant="surface">
           <Tooltip content="Adicionar um local de coleta">
             <Flex direction='row' gap='1'>
               Adicionar

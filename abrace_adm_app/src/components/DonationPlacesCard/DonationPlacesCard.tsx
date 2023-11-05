@@ -98,7 +98,7 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
           <Flex direction="column" justify="between" gap="1" align="center">
             <Dialog.Root>
               <Dialog.Trigger>
-                <Button color="tomato">
+                <Button color="tomato" variant="surface">
                   <Tooltip content="Deletar">
                     <TrashIcon />
                   </Tooltip>
@@ -110,12 +110,18 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
                 <br />
                 <Flex direction="row" justify="between" gap="5" align="center">
                   <Dialog.Close>
-                    <Button color="tomato" onClick={props.onClickFunction}>
+                    <Button
+                      color="tomato"
+                      variant="surface"
+                      onClick={props.onClickFunction}
+                    >
                       DELETAR
                     </Button>
                   </Dialog.Close>
                   <Dialog.Close>
-                    <Button color="amber">VOLTAR</Button>
+                    <Button color="amber" variant="surface">
+                      VOLTAR
+                    </Button>
                   </Dialog.Close>
                 </Flex>
               </Dialog.Content>
@@ -123,7 +129,7 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
 
             <Dialog.Root>
               <Dialog.Trigger>
-              <Button color="amber">
+                <Button color="amber" variant="surface">
                   <Tooltip content="Editar">
                     <Pencil1Icon />
                   </Tooltip>
@@ -266,13 +272,16 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
                   <Dialog.Close>
                     <Button
                       color="lime"
+                      variant="surface"
                       onClick={() => setProperties(editedProps)}
                     >
                       ATUALIZAR
                     </Button>
                   </Dialog.Close>
                   <Dialog.Close>
-                    <Button color="amber">VOLTAR</Button>
+                    <Button color="amber" variant="surface">
+                      VOLTAR
+                    </Button>
                   </Dialog.Close>
                 </Flex>
               </Dialog.Content>
