@@ -252,10 +252,6 @@ const DonationLocationsCard = () => {
     return clone;
   }
 
-  useEffect(() => {
-    console.log(locations);
-  }, [locations]);
-
   return (
     <Card style={{ width: 450 }}>
       <Flex direction="column" justify="between" align="center" gap="3">
