@@ -88,7 +88,7 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
               ""
             )}
             <Text as="div" size="1" weight="medium">
-              {properties.city}, - {properties.state}
+              {properties.city} - {properties.state}
             </Text>
           </Flex>
         </Box>
