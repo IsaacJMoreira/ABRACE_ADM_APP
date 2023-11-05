@@ -15,10 +15,9 @@ import {
   MagicWandIcon,
 } from "@radix-ui/react-icons";
 import React from "react";
-import RevenueCard from "@/components/RevenueCard/RevenueCard";
-import AdoptionCard from "@/components/AdoptionCard/AdoptionCard";
-import UsersCard from "@/components/UsersCard/UsersCard";
-import KanBanBoardCard from "@/components/KanbanBoardCard/KanBanBoardCard";
+
+import Sumary from "@/components/Panel/Sumary/Sumary";
+import ControlPanel from "@/components/Panel/ControlPanel/ControlPanel";
 
 const page = () => {
   return (
@@ -54,38 +53,11 @@ const page = () => {
 
         <Box px="4" pt="3" pb="2">
           <Tabs.Content value="resumo">
-            <Flex
-              direction="column"
-              align="center"
-              justify="between"
-              gap="3"
-              wrap="wrap"
-            >
-              <Box className="w-full h-fit min-h-[300px]">
-                <Flex
-                  direction="row"
-                  justify="between"
-                  align="center"
-                  gap="1"
-                  wrap="wrap"
-                >
-                  <RevenueCard />
-                  <AdoptionCard />
-                  <UsersCard />
-                </Flex>
-              </Box>
-
-              <Box className="w-full h-fit">
-                <KanBanBoardCard />
-              </Box>
-            </Flex>
+            <Sumary/>
           </Tabs.Content>
 
           <Tabs.Content value="painelDeControle">
-            <Text size="2">
-              Adita: Endereços dos locais de coleta, planos de pagamento
-              recorrente, informçaões de pix e banco
-            </Text>
+            <ControlPanel/>
           </Tabs.Content>
 
           <Tabs.Content value="pets">

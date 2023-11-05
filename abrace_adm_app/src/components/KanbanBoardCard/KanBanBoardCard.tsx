@@ -2,10 +2,13 @@
 
 import {
   Box,
+  Button,
   Card,
+  DropdownMenu,
   Flex,
   Heading,
   ScrollArea,
+  Select,
   Separator,
 } from "@radix-ui/themes";
 import React from "react";
@@ -21,9 +24,27 @@ const KanBanBoardCard = () => {
   return (
     <Card>
       <Flex direction="column" align="center" justify="between" gap="3">
-        <Heading size="7" align="center">
-          Últimas Atividades no App
-        </Heading>
+        <Flex direction="row" justify="between" gap="3" align='center' >
+          <Heading size="5" align="center" >
+            Atividades em Atendimento
+          </Heading>
+          <Separator orientation="vertical" size='1'/>
+          <Select.Root defaultValue= {'semana'}>
+            Mostrar:
+            <Select.Trigger/>
+            <Select.Content>
+              <Select.Group>
+                <Select.Item value="hoje">Hoje</Select.Item>
+                <Select.Item value="semana">Esta semana</Select.Item>
+                <Select.Item value="mes">Este Mês</Select.Item>
+                <Select.Item value="ano">Este Ano</Select.Item>
+                <Select.Item value="tudo">Tudo</Select.Item>
+              </Select.Group>
+            </Select.Content>
+          </Select.Root>
+         
+        </Flex>
+
         <Separator orientation="horizontal" size="4" />
         <Flex
           direction="row"
@@ -71,6 +92,7 @@ const KanBanBoardCard = () => {
               <Heading size="5" align="center" color="yellow">
                 Atividades em Atendimento
               </Heading>
+
               <Separator orientation="horizontal" size="4" />
               <ScrollArea
                 type="always"

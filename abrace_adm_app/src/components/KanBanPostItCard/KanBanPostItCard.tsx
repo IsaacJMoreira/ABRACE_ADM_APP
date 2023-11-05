@@ -7,6 +7,7 @@ import {
   Heading,
   Separator,
   Text,
+  Tooltip,
 } from "@radix-ui/themes";
 import React from "react";
 import { useState, ReactNode, FC } from "react";
@@ -19,30 +20,24 @@ interface MyProps {
   children?: ReactNode;
   userName?: string;
   date?: string;
-  type?: string;
+  type: string;
 }
 
-function postItInteractiveSelector(type = "volunteer"): {
-  title: string;
-  icon: StaticImageData;
-} {
-  switch (type) {
-    case "volunteer":
-      return { title: "Novo Voluntário", icon: VOLUNTEER };
-      break;
-    case "donation":
-      return { title: "Nova Doação", icon: DONATION };
-      break;
-    case "adoption":
-      return { title: "Novo Pedido de Adoção", icon: ADOPTION };
-      break;
-    default:
-      return { title: "Novo Voluntário", icon: VOLUNTEER };
-  }
+interface PostIt {
+  [type: string]: {
+    title: string;
+    icon: StaticImageData;
+  };
 }
+
+const PostItInteractiveSelector: PostIt = {
+  volunteer: { title: "Novo Voluntário", icon: VOLUNTEER },
+  donation: { title: "Nova Doação", icon: DONATION },
+  adoption: { title: "Novo Pedido de Adoção", icon: ADOPTION },
+};
 
 const KanBanPostItCard: FC<MyProps> = (props) => {
-  const { title, icon } = postItInteractiveSelector(props.type);
+  const { title, icon } = PostItInteractiveSelector[props.type];
   return (
     <Card className="w-full" variant="classic">
       <Flex direction="row" justify="between" gap="3" align="center">
@@ -78,14 +73,20 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
               Marcar como:
             </Text>
             <Button size={"1"} color="tomato" className="w-full">
-              Não Atendido
+              <Tooltip content='Passar para "Novas Atividades"'>
+                <Text as='div'>Não Atendido</Text>
+              </Tooltip>
             </Button>
 
             <Button size={"1"} color="amber" className="w-full">
-              Atendendo
+              <Tooltip content='Passar para "Atividades em Atendimento"'>
+                <Text as='div'>Atendendo</Text>
+              </Tooltip>
             </Button>
             <Button size={"1"} color="lime" className="w-full">
-              Atendido
+              <Tooltip content='Passar para "Atividades Atendidas"'>
+                <Text as='div'>Atendido</Text>
+              </Tooltip>
             </Button>
           </Flex>
         </Box>
