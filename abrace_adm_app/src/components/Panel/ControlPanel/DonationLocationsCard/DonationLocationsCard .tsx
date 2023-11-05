@@ -187,12 +187,12 @@ const addNewPlace = (
         <br />
         <Flex direction="row" justify="between" gap="5" align="center">
           <Dialog.Close>
-            <Button color="lime" onClick={() => addNewLocation(locations)}>
+            <Button color="lime" variant="surface" onClick={() => addNewLocation(locations)}>
               ADICIONAR
             </Button>
           </Dialog.Close>
           <Dialog.Close>
-            <Button color="amber" onClick={() => setNewPlace(emptyProps)}>
+            <Button color="amber" variant="surface" onClick={() => setNewPlace(emptyProps)}>
               VOLTAR
             </Button>
           </Dialog.Close>
