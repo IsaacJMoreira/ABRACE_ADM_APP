@@ -72,28 +72,29 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
           <Flex direction="row" gap="3" justify="between" align="center">
             <NextImage src={PIN} alt="location pin" className="w-12 h-100" />
             <Separator orientation="vertical" size="3" />
-          </Flex>
-        </Box>
-        <Box>
+            <Box>
           <Flex direction="column" justify="between" gap="0" align="start">
             <Text as="div" size="4" weight="bold" color="lime">
               {properties.name}
             </Text>
-            <Text as="div" size="3" weight="medium">
+            <Text as="div" size="1" weight="medium">
               {properties.street}, número: {properties.number}
             </Text>
             {properties.complement ? (
-              <Text as="div" size="3" weight="medium">
+              <Text as="div" size="1" weight="medium">
                 {properties.complement}
               </Text>
             ) : (
               ""
             )}
-            <Text as="div" size="3" weight="medium">
+            <Text as="div" size="1" weight="medium">
               {properties.city}, - {properties.state}
             </Text>
           </Flex>
         </Box>
+          </Flex>
+        </Box>
+        
         <Box>
           <Flex direction="column" justify="between" gap="1" align="center">
             <Dialog.Root>
