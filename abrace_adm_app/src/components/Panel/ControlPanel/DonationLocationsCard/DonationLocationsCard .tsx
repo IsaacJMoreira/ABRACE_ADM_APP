@@ -253,7 +253,7 @@ const DonationLocationsCard = () => {
   }
 
   return (
-    <Card variant="ghost" className="bg-gradient-to-br from-[#F3B4B0] to-[#e66a63]  p-3" style={{ width: 450 }}>
+    <Card variant="ghost" className="bg-gradient-to-br from-[#F3B4B0] to-[#e66a63]  p-3" style={{ width: 450, height: "100%" }}>
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
           direction="row"
@@ -262,14 +262,14 @@ const DonationLocationsCard = () => {
           align="center"
           className="w-full"
         >
-          <Heading size="5" color="tomato">
+          <Heading size="4" color="tomato">
             Locais de Doação
           </Heading>
           {addNewPlace(locations, setLocations)}
         </Flex>
 
         <Separator orientation="horizontal" size="4" />
-        <ScrollArea type="always" scrollbars="vertical" style={{ height: 300 }}>
+        <ScrollArea type="always" scrollbars="vertical" style={{ height: "100%", maxHeight: 500 }}>
           <Box p="2" pr="8">
             {locations.map((location) => {
               return (

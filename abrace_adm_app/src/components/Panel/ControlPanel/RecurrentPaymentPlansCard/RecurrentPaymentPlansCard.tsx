@@ -216,7 +216,7 @@ const RecurrentPaymentPlansCard = () => {
     <Card
       variant="ghost"
       className="bg-gradient-to-br from-[#EAF4E3] to-[#96D279] p-3"
-      style={{ width: 450 }}
+      style={{ width: 450, height: '100%' }}
     >
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
@@ -226,14 +226,14 @@ const RecurrentPaymentPlansCard = () => {
           align="center"
           className="w-full"
         >
-          <Heading size="5" color="lime">
+          <Heading size="4" color="lime">
             Planos de Assinatura Mensalista
           </Heading>
           {addNewPlan(plans, setPlans)}
         </Flex>
 
         <Separator orientation="horizontal" size="4" />
-        <ScrollArea type="always" scrollbars="vertical" style={{ height: 300 }}>
+        <ScrollArea type="always" scrollbars="vertical" style={{ height: "100%", maxHeight: 500 }}>
           <Box p="2" pr="8">
             {plans.map((plan) => {
               return (

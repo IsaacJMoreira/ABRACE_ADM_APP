@@ -26,7 +26,7 @@ const RootLayout: FC<MyProps> = (props) => {
           accentColor="lime"
           panelBackground="translucent"
           scaling="100%"
-          radius="large"
+          radius="small"
           appearance={darkMode}
         >
           <Header />

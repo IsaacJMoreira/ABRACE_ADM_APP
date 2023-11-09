@@ -1,23 +1,38 @@
-import React from "react";
+import React, { useState, FC, ReactElement } from "react";
 import DonationLocationsCard from "./DonationLocationsCard/DonationLocationsCard ";
-import { Box, Flex } from "@radix-ui/themes";
+import { Box, Card, Flex } from "@radix-ui/themes";
 import RecurrentPaymentPlansCard from "./RecurrentPaymentPlansCard/RecurrentPaymentPlansCard";
-import EventsCard from "./EventsCard/EventsCard";
+import ONGInfoCard from "./ONGInfoCard/ONGInfoCard";
+import EventsCard from "@/components/EventsCard/EventsCard";
 
 const ControlPanel = () => {
   return (
-    <Flex direction="row" justify="between" gap="5">
+    <Flex
+      direction="row"
+      justify="between"
+      gap="3"
+      style={{ height: "fit-content" }}
+    >
       <Box className="w-full h-fit p-3">
         <Flex
           direction="row"
           justify="between"
           align="start"
-          gap="1"
+          gap="5"
           wrap="wrap"
         >
-          <EventsCard />
-          <DonationLocationsCard />
-          <RecurrentPaymentPlansCard />
+          <ONGInfoCard />
+          <Flex direction="column" gap="3">
+            <Box>
+              <Card> CARD DE APADRINHAMENTOS</Card>
+            </Box>
+            <Box>
+              <Flex direction="row" gap="3">
+                <DonationLocationsCard />
+                <RecurrentPaymentPlansCard />
+              </Flex>
+            </Box>
+          </Flex>
         </Flex>
       </Box>
     </Flex>

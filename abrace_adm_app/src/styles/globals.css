@@ -13,21 +13,6 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.img_36px{
-  height: 36px;
-  width: 36px;
-}
-
-.img_48px{
-  height: 48px;
-  width: 48px;
-}
-
-.img_33vw{
-  height: 33vw;
-  width: 33vw;
-}
-
 
 
 /* POSITIONING  */

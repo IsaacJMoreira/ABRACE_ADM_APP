@@ -1,7 +1,7 @@
 import EventCard from '@/components/EventCard/EventCard'
 import { Card } from '@radix-ui/themes'
 import React from 'react'
-import EXAMPLEimg from '../../../../public/images/Volunteer.jpg'
+import EXAMPLEimg from '../../public/images/Volunteer.jpg'
 
 const EventsCard = () => {
   return (

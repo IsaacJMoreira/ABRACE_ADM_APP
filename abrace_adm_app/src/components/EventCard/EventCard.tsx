@@ -44,20 +44,26 @@ interface DisclaimerProps {
   eventID?: string;
 }
 
-
-
 const EventCard: FC<MyProps> = (props) => {
   return (
-    <Card  variant="surface">
-      
+    <Card variant="surface">
       <Flex direction="row" justify="between" gap="2">
-      <Inset clip="border-box" side="left" pb="0">
-        <NextImage className="w-[200px]" src={props.URL} alt={props.ALT} />
-      </Inset>
-      <Box>
-        <Heading size='4' color="amber">{props.name}</Heading>
-      </Box>
-        
+        <Inset clip="border-box" side="left" pb="0">
+          <NextImage className="w-[200px]" src={props.URL} alt={props.ALT} />
+        </Inset>
+        <Box>
+          <Flex direction="column" justify="start" style={{width: 200}}>
+            <Heading size="4" color="amber">
+              {props.name}
+            </Heading>
+          </Flex>
+        </Box>
+        <Box>
+          <Flex direction="column" justify="between" gap={"1"} align="center">
+            <Button>X</Button>
+            <Button>!</Button>
+          </Flex>
+        </Box>
       </Flex>
     </Card>
   );
