@@ -67,7 +67,7 @@ const RecurrentPaymentPlanCard: FC<MyProps> = (props) => {
             <Separator orientation="vertical" size="3" />
             <Box>
               <Flex direction="column" justify="between" gap="0" align="start">
-                <Text as="div" size="3" weight="bold" color="lime">
+                <Text as="div" size="2" weight="bold" color="lime">
                   {properties.name}
                 </Text>
                 <Text as="div" size="1" weight="medium">
