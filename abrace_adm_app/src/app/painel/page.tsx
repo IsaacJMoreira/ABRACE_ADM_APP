@@ -30,11 +30,7 @@ const page = () => {
               <BarChartIcon /> Resumo
             </Flex>
           </Tabs.Trigger>
-          <Tabs.Trigger value="painelDeControle">
-            <Flex direction="row" justify="between" align="center" gap="3">
-              <GearIcon /> Painel de Controle
-            </Flex>
-          </Tabs.Trigger>
+          
           <Tabs.Trigger value="pets">
             <Flex direction="row" justify="between" align="center" gap="3">
               <HeartIcon /> Gerenciar Pets
@@ -48,6 +44,11 @@ const page = () => {
           <Tabs.Trigger value="usuarios">
             <Flex direction="row" justify="between" align="center" gap="3">
               <AvatarIcon /> Gerenciar Usuários
+            </Flex>
+          </Tabs.Trigger>
+          <Tabs.Trigger value="painelDeControle">
+            <Flex direction="row" justify="between" align="center" gap="3">
+              <GearIcon /> Painel de Controle
             </Flex>
           </Tabs.Trigger>
         </Tabs.List>
