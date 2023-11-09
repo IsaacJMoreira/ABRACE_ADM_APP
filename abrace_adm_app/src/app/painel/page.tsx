@@ -14,7 +14,7 @@ import {
   HeartIcon,
   MagicWandIcon,
 } from "@radix-ui/react-icons";
-import React from "react";
+import React, { useContext } from "react";
 
 import Sumary from "@/components/Panel/Sumary/Sumary";
 import ControlPanel from "@/components/Panel/ControlPanel/ControlPanel";

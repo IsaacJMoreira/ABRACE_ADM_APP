@@ -97,7 +97,7 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
         
         <Box>
           <Flex direction="column" justify="between" gap="1" align="center">
-            <Dialog.Root>
+            <Dialog.Root >
               <Dialog.Trigger>
                 <Button color="tomato" variant="surface">
                   <Tooltip content="Deletar">
@@ -105,7 +105,7 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
                   </Tooltip>
                 </Button>
               </Dialog.Trigger>
-              <Dialog.Content className="p-5">
+              <Dialog.Content className="p-5" style={{maxWidth: 300}} >
                 <Dialog.Title>Deletar Local de Coleta?</Dialog.Title>
                 <Separator orientation="horizontal" size="4" />
                 <br />

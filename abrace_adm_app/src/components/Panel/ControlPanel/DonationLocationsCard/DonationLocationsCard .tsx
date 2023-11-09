@@ -85,7 +85,7 @@ const addNewPlace = (
         </Button>
       </Dialog.Trigger>
       <Dialog.Content className="p-5">
-        <Dialog.Title>Editar Local de Coleta</Dialog.Title>
+        <Dialog.Title>Adicionar Novo Local de Coleta</Dialog.Title>
 
         <Separator orientation="horizontal" size="4" />
         <br />
@@ -253,7 +253,7 @@ const DonationLocationsCard = () => {
   }
 
   return (
-    <Card style={{ width: 450 }}>
+    <Card variant="ghost" className="bg-gradient-to-br from-[#F3B4B0] to-[#e66a63]  p-3" style={{ width: 450 }}>
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
           direction="row"
@@ -262,7 +262,7 @@ const DonationLocationsCard = () => {
           align="center"
           className="w-full"
         >
-          <Heading size="5" color="lime">
+          <Heading size="5" color="tomato">
             Locais de Doação
           </Heading>
           {addNewPlace(locations, setLocations)}
