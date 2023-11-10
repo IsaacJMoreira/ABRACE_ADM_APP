@@ -116,7 +116,9 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                           {title}
                           <Dialog.Close>
                             <Button variant="surface" color="tomato">
-                              <Cross1Icon />
+                              <Tooltip content="Fechar">
+                                <Cross1Icon />
+                              </Tooltip>
                             </Button>
                           </Dialog.Close>
                         </Flex>
