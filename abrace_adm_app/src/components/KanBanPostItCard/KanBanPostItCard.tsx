@@ -222,7 +222,7 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                             </Text>
                             <Dialog.Close>
                               <Button
-                                variant="soft"
+                                variant="surface"
                                 size={"1"}
                                 color="tomato"
                                 className="w-full"
@@ -284,18 +284,18 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
             <Text as="div" size={"1"}>
               Marcar como
             </Text>
-            <Button size={"1"} color="tomato" className="w-full">
+            <Button variant="surface" size={"1"} color="tomato" className="w-full">
               <Tooltip content='Passar para "Novas Atividades"'>
                 <Text as="div">Não Atendido</Text>
               </Tooltip>
             </Button>
 
-            <Button size={"1"} color="amber" className="w-full">
+            <Button variant="surface" size={"1"} color="amber" className="w-full">
               <Tooltip content='Passar para "Atividades em Atendimento"'>
                 <Text as="div">Atendendo</Text>
               </Tooltip>
             </Button>
-            <Button size={"1"} color="lime" className="w-full">
+            <Button variant="surface" size={"1"} color="lime" className="w-full">
               <Tooltip content='Passar para "Atividades Atendidas"'>
                 <Text as="div">Atendido</Text>
               </Tooltip>
