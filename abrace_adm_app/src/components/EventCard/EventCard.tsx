@@ -11,7 +11,7 @@ import {
   Box,
   Heading,
 } from "@radix-ui/themes";
-import NextImage from "next/image";
+import NextImage, { StaticImageData } from "next/image";
 
 import DONATEIcon from "../../public/assets/icons/2904845 1.png";
 
@@ -35,7 +35,7 @@ interface MyProps {
   description: string;
   imgURL?: IMGProps;
   linkToLocation: string;
-  URL: string;
+  URL: StaticImageData;
   ALT: string;
   eventID?: string;
 }
