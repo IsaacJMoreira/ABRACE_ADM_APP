@@ -18,7 +18,11 @@ import DONATION from "../../public/icons/donation.png";
 import ADOPTION from "../../public/icons/adoption.png";
 import SPONSOR from "../../public/icons/pet-dog.png";
 import NextImage, { StaticImageData } from "next/image";
-import { DotsHorizontalIcon } from "@radix-ui/react-icons";
+import {
+  Cross1Icon,
+  DotsHorizontalIcon,
+  MinusIcon,
+} from "@radix-ui/react-icons";
 
 interface MyProps {
   children?: ReactNode;
@@ -111,8 +115,8 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                         <Flex direction="row" justify="between">
                           {title}
                           <Dialog.Close>
-                            <Button variant="surface" color="lime">
-                              OK
+                            <Button variant="surface" color="tomato">
+                              <Cross1Icon />
                             </Button>
                           </Dialog.Close>
                         </Flex>
@@ -129,13 +133,8 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                       <Separator orientation="horizontal" size="4" />
                       <br />
 
-                      <Flex
-                        direction="row"
-                        align="start"
-                        justify="between"
-                        gap="3"
-                      >
-                        <Box className="p-1">
+                      <Flex direction="row" justify="between" gap="3">
+                        <Box className="p-1 w-full">
                           <Flex
                             direction="column"
                             justify="start"
@@ -151,21 +150,32 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                                     justify="start"
                                     gap="3"
                                   >
-                                    <Text as="div" weight="medium" size="2">
-                                      Menságem do doador:
-                                    </Text>
                                     <Card
                                       variant="ghost"
-                                      className="bg-gradient-to-br from-cyan-400 to-lime-400"
+                                      className="bg-gradient-to-br from-slate-500 to-slate-800 shadow-md shadow-slate-600"
                                     >
-                                      <Text
-                                        as="div"
-                                        size="1"
-                                        weight="bold"
-                                        className="bg-gradient-to-br from-orange-500 to-fuchsia-700 inline-block text-transparent bg-clip-text"
+                                      <Flex
+                                        direction="column"
+                                        justify="between"
+                                        gap="1"
                                       >
-                                        "{props.donationMessage}"
-                                      </Text>
+                                        <Text
+                                          as="div"
+                                          weight="medium"
+                                          size="2"
+                                          className="bg-gradient-to-r from-amber-300 to-orange-400   text-transparent bg-clip-text  w-fit "
+                                        >
+                                          {`${props.userName}`}
+                                        </Text>
+                                        <Text
+                                          as="div"
+                                          size="1"
+                                          weight="bold"
+                                          className="bg-gradient-to-br from-lime-200 to-amber-400 inline-block text-transparent bg-clip-text"
+                                        >
+                                          "{props.donationMessage}"
+                                        </Text>
+                                      </Flex>
                                     </Card>
                                   </Flex>
                                 </>
@@ -174,7 +184,6 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                               )}
                             </Text>
                             <br />
-                            <Separator orientation="horizontal" size="4" />
 
                             <Flex direction="row" justify="between" gap="3">
                               <Button
