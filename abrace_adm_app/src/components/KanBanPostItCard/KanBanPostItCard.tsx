@@ -3,6 +3,8 @@ import {
   Box,
   Button,
   Card,
+  Dialog,
+  DialogClose,
   Flex,
   Heading,
   Separator,
@@ -14,12 +16,25 @@ import { useState, ReactNode, FC } from "react";
 import VOLUNTEER from "../../public/icons/volunteer-icon-10 1.png";
 import DONATION from "../../public/icons/donation.png";
 import ADOPTION from "../../public/icons/adoption.png";
+import SPONSOR from "../../public/icons/pet-dog.png";
 import NextImage, { StaticImageData } from "next/image";
+import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 
 interface MyProps {
   children?: ReactNode;
   userName?: string;
+  userID?: string;
+  petName?: string;
+  petID?: string;
+  eventName?: string;
+  eventID?: string;
+  donationValue?: string;
+  sponsorType?: string;
+  sponsoredValue?: string;
+  sponsoredItem?: string;
+  donationMessage?: string;
   date?: string;
+
   type: string;
 }
 
@@ -27,17 +42,47 @@ interface PostIt {
   [type: string]: {
     title: string;
     icon: StaticImageData;
+    detailText: string;
   };
 }
 
 const PostItInteractiveSelector: PostIt = {
-  volunteer: { title: "Novo Voluntário", icon: VOLUNTEER },
-  donation: { title: "Nova Doação", icon: DONATION },
-  adoption: { title: "Novo Pedido de Adoção", icon: ADOPTION },
+  volunteer: {
+    title: "Novo Voluntário",
+    icon: VOLUNTEER,
+    detailText: "se voluntariou para",
+  },
+  donation: { title: "Nova Doação", icon: DONATION, detailText: "doou" },
+  adoption: {
+    title: "Novo Pedido de Adoção",
+    icon: ADOPTION,
+    detailText: "pediu para adotar",
+  },
+  sponsor: {
+    title: "Novo Apadrinhamento",
+    icon: SPONSOR,
+    detailText: "apadrinhou",
+  },
 };
 
 const KanBanPostItCard: FC<MyProps> = (props) => {
-  const { title, icon } = PostItInteractiveSelector[props.type];
+  const { title, icon, detailText } = PostItInteractiveSelector[props.type];
+
+  const explanation = `${props.userName} ${detailText}${
+    props.type === "donation" ? ` R$${props.donationValue}` : ""
+  } ${props.eventName ? props.eventName : ""} ${
+    props.petName ? props.petName : ""
+  }`;
+
+  const sponsorDetails =
+    props.type === "sponsor"
+      ? `Tipo de Apadrinhamento: ${props.sponsorType} - ${
+          props.sponsoredItem
+            ? props.sponsoredItem
+            : `R$ ${props.sponsoredValue}`
+        }`
+      : "";
+
   return (
     <Card className="w-full" variant="classic">
       <Flex direction="row" justify="between" gap="3" align="center">
@@ -47,9 +92,162 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
             <Separator orientation="vertical" size="3" />
             <Box>
               <Flex direction="column" justify="between" align="start" gap="1">
-                <Text as="div" size="1">
-                  {title}
-                </Text>
+                <Box>
+                  <Dialog.Root>
+                    <Dialog.Trigger>
+                      <Button variant="ghost" size="1" color="gold">
+                        <Text as="p" weight="bold">
+                          {title}
+                        </Text>
+
+                        <Separator orientation="vertical" size="1" />
+                        <Tooltip content={`Detalhes de ${title}`}>
+                          <DotsHorizontalIcon />
+                        </Tooltip>
+                      </Button>
+                    </Dialog.Trigger>
+                    <Dialog.Content style={{ width: 1000 }}>
+                      <Dialog.Title>
+                        <Flex direction="row" justify="between">
+                          {title}
+                          <Dialog.Close>
+                            <Button variant="surface" color="lime">
+                              OK
+                            </Button>
+                          </Dialog.Close>
+                        </Flex>
+                      </Dialog.Title>
+
+                      <Dialog.Description>
+                        <Text as="div" weight="medium">
+                          {explanation}
+                        </Text>
+                        <Text as="div" size="1">
+                          {sponsorDetails}
+                        </Text>
+                      </Dialog.Description>
+                      <Separator orientation="horizontal" size="4" />
+                      <br />
+
+                      <Flex
+                        direction="row"
+                        align="start"
+                        justify="between"
+                        gap="3"
+                      >
+                        <Box className="p-1">
+                          <Flex
+                            direction="column"
+                            justify="start"
+                            align="start"
+                            gap="1"
+                          >
+                            <Text as="div">
+                              {props.donationMessage ? (
+                                <>
+                                  <Flex
+                                    direction="column"
+                                    align="start"
+                                    justify="start"
+                                    gap="3"
+                                  >
+                                    <Text as="div" weight="medium" size="2">
+                                      Menságem do doador:
+                                    </Text>
+                                    <Card
+                                      variant="ghost"
+                                      className="bg-gradient-to-br from-cyan-400 to-lime-400"
+                                    >
+                                      <Text
+                                        as="div"
+                                        size="1"
+                                        weight="bold"
+                                        className="bg-gradient-to-br from-orange-500 to-fuchsia-700 inline-block text-transparent bg-clip-text"
+                                      >
+                                        "{props.donationMessage}"
+                                      </Text>
+                                    </Card>
+                                  </Flex>
+                                </>
+                              ) : (
+                                ""
+                              )}
+                            </Text>
+                            <br />
+                            <Separator orientation="horizontal" size="4" />
+
+                            <Flex direction="row" justify="between" gap="3">
+                              <Button
+                                variant="soft"
+                                color="cyan"
+                              >{`Perfil de ${props.userName}`}</Button>
+                              {props.type === "adoption" ||
+                              props.type === "sponsor" ? (
+                                <Button
+                                  variant="soft"
+                                  color="orange"
+                                >{`Perfil de ${props.petName}`}</Button>
+                              ) : props.type === "donation" ? (
+                                ""
+                              ) : (
+                                <Button variant="soft" color="orange">
+                                  {props.eventName}
+                                </Button>
+                              )}
+                            </Flex>
+                          </Flex>
+                        </Box>
+
+                        <Box>
+                          <Flex
+                            direction="column"
+                            justify="between"
+                            gap="1"
+                            align="center"
+                            className="w-fit min-w-[110px] p-1 border-zinc-300 border rounded-lg"
+                          >
+                            <Text as="div" size={"1"}>
+                              Marcar como
+                            </Text>
+                            <Dialog.Close>
+                              <Button
+                                size={"1"}
+                                color="tomato"
+                                className="w-full"
+                              >
+                                <Tooltip content='Passar para "Novas Atividades"'>
+                                  <Text as="div">Não Atendido</Text>
+                                </Tooltip>
+                              </Button>
+                            </Dialog.Close>
+                            <Dialog.Close>
+                              <Button
+                                size={"1"}
+                                color="amber"
+                                className="w-full"
+                              >
+                                <Tooltip content='Passar para "Atividades em Atendimento"'>
+                                  <Text as="div">Atendendo</Text>
+                                </Tooltip>
+                              </Button>
+                            </Dialog.Close>
+                            <Dialog.Close>
+                              <Button
+                                size={"1"}
+                                color="lime"
+                                className="w-full"
+                              >
+                                <Tooltip content='Passar para "Atividades Atendidas"'>
+                                  <Text as="div">Atendido</Text>
+                                </Tooltip>
+                              </Button>
+                            </Dialog.Close>
+                          </Flex>
+                        </Box>
+                      </Flex>
+                    </Dialog.Content>
+                  </Dialog.Root>
+                </Box>
                 <Heading size="3" color="lime">
                   {props.userName}
                 </Heading>
@@ -67,25 +265,25 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
             justify="between"
             gap="1"
             align="center"
-            className="w-fit"
+            className="w-fit p-1 border-zinc-300 border rounded-lg"
           >
             <Text as="div" size={"1"}>
-              Marcar como:
+              Marcar como
             </Text>
             <Button size={"1"} color="tomato" className="w-full">
               <Tooltip content='Passar para "Novas Atividades"'>
-                <Text as='div'>Não Atendido</Text>
+                <Text as="div">Não Atendido</Text>
               </Tooltip>
             </Button>
 
             <Button size={"1"} color="amber" className="w-full">
               <Tooltip content='Passar para "Atividades em Atendimento"'>
-                <Text as='div'>Atendendo</Text>
+                <Text as="div">Atendendo</Text>
               </Tooltip>
             </Button>
             <Button size={"1"} color="lime" className="w-full">
               <Tooltip content='Passar para "Atividades Atendidas"'>
-                <Text as='div'>Atendido</Text>
+                <Text as="div">Atendido</Text>
               </Tooltip>
             </Button>
           </Flex>

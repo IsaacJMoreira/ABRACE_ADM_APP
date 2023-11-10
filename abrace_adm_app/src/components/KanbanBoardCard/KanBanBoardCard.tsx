@@ -71,6 +71,8 @@ const KanBanBoardCard = () => {
                   <Flex direction="column" gap="1">
                     <KanBanPostItCard
                       userName="Isaac Moreira"
+                      donationValue="10.00"
+                      donationMessage="Oi, pessoal da ABRACE! Espero que o valor ajude!"
                       date={`${dia}/${mes}/${ano}`}
                       type="donation"
                     />
@@ -78,6 +80,31 @@ const KanBanBoardCard = () => {
                       userName="João"
                       date={`${dia}/${mes}/${ano}`}
                       type="volunteer"
+                      eventName='evento Teste1'
+                    />
+                    <KanBanPostItCard
+                      userName="Isaac Moreira"
+                      petName="Clarinha"
+                      sponsoredItem="Osso Limpa Gengiva"
+                      sponsorType="Doação de Item"
+                      donationMessage="Vamos cuidar dessa gengiva, Clarinha? Deixei seu ossinho na PetShop Fictícia 1"
+                      date={`${dia}/${mes}/${ano}`}
+                      type="sponsor"
+                    />
+                    <KanBanPostItCard
+                      userName="Isaac Moreira"
+                      petName="Bolinha"
+                      sponsorType="PIX"
+                      sponsoredValue="100.00"
+                      donationMessage="Oi, Bolinha! Espero que o valor ajude na consulta!"
+                      date={`${dia}/${mes}/${ano}`}
+                      type="sponsor"
+                    />
+                     <KanBanPostItCard
+                      userName="Isaac Moreira"
+                      petName="Thomas"
+                      date={`${dia}/${mes}/${ano}`}
+                      type="adoption"
                     />
                   </Flex>
                 </Box>
