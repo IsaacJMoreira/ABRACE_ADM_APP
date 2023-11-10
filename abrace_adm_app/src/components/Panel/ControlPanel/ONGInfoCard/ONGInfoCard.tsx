@@ -78,8 +78,8 @@ const ONGInfoCard = () => {
 
   return (
     <Card
-      variant="ghost"
-      className="w-2/5 bg-gradient-to-br from-[#DDFDFF] to-[#9CCCCE] p-3"
+      variant="surface"
+      className="w-100"
       style={{ height: "100%" }}
     >
       <Flex direction="column" justify="between" gap="3">
@@ -90,7 +90,7 @@ const ONGInfoCard = () => {
             </Heading>
             <Dialog.Root>
               <Dialog.Trigger>
-                <Button size="1" color="cyan" variant="surface">
+                <Button size="1" color="cyan" variant="surface" onClick={() => setEditedOngInfo(ongInformations)}>
                   <Tooltip content="Editar informações">
                     <Flex direction="row" gap="1">
                       Editar

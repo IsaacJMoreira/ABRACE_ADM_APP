@@ -214,9 +214,9 @@ const RecurrentPaymentPlansCard = () => {
 
   return (
     <Card
-      variant="ghost"
-      className="bg-gradient-to-br from-[#EAF4E3] to-[#96D279] p-3"
-      style={{ width: 450, height: '100%' }}
+      variant="surface"
+      className="w-2/3"
+      style={{ height: '100%' }}
     >
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex

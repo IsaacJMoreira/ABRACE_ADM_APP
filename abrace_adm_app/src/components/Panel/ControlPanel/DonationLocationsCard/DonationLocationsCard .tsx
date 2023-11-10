@@ -253,7 +253,7 @@ const DonationLocationsCard = () => {
   }
 
   return (
-    <Card variant="ghost" className="bg-gradient-to-br from-[#F3B4B0] to-[#e66a63]  p-3" style={{ width: 450, height: "100%" }}>
+    <Card variant="surface" className="w-2/3" style={{height: "100%" }}>
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
           direction="row"
