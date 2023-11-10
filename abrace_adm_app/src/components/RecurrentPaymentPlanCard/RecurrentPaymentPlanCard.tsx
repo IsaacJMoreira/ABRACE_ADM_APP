@@ -107,7 +107,7 @@ const RecurrentPaymentPlanCard: FC<MyProps> = (props) => {
                 </Button>
               </Dialog.Trigger>
               <Dialog.Content className="p-5" style={{ maxWidth: 300 }}>
-                <Dialog.Title>Deletar Local de Coleta?</Dialog.Title>
+                <Dialog.Title>Deletar Plano?</Dialog.Title>
                 <Separator orientation="horizontal" size="4" />
                 <br />
                 <Flex direction="row" justify="between" gap="5" align="center">
