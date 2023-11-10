@@ -10,31 +10,15 @@ const ControlPanel = () => {
     <Flex
       direction="row"
       justify="between"
-      gap="3"
+      gap="6"
       style={{ height: "fit-content" }}
+      wrap="wrap"
+      className="p-2"
     >
-      <Box className="w-full h-fit p-3">
-        <Flex
-          direction="row"
-          justify="between"
-          align="start"
-          gap="5"
-          wrap="wrap"
-        >
-          <ONGInfoCard />
-          <Flex direction="column" gap="3">
-            <Box>
-              <Card> CARD DE APADRINHAMENTOS</Card>
-            </Box>
-            <Box>
-              <Flex direction="row" gap="3">
-                <DonationLocationsCard />
-                <RecurrentPaymentPlansCard />
-              </Flex>
-            </Box>
-          </Flex>
-        </Flex>
-      </Box>
+      <ONGInfoCard />
+
+      <DonationLocationsCard />
+      <RecurrentPaymentPlansCard />
     </Flex>
   );
 };
