@@ -222,6 +222,7 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                             </Text>
                             <Dialog.Close>
                               <Button
+                                variant="soft"
                                 size={"1"}
                                 color="tomato"
                                 className="w-full"
@@ -233,6 +234,7 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                             </Dialog.Close>
                             <Dialog.Close>
                               <Button
+                                variant="surface"
                                 size={"1"}
                                 color="amber"
                                 className="w-full"
@@ -244,6 +246,7 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                             </Dialog.Close>
                             <Dialog.Close>
                               <Button
+                                variant="surface"
                                 size={"1"}
                                 color="lime"
                                 className="w-full"
