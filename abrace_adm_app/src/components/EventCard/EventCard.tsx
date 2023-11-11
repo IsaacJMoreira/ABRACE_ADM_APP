@@ -29,10 +29,7 @@ import {
   TrashIcon,
 } from "@radix-ui/react-icons";
 
-interface IMGProps {
-  URL?: string;
-  ALT?: string;
-}
+
 
 interface MyProps {
   children?: ReactNode;
@@ -42,7 +39,7 @@ interface MyProps {
   duration: string;
   location: string;
   description: string;
-  imgURL?: IMGProps;
+  imgURL?: string;
   linkToLocation: string;
   URL: StaticImageData;
   ALT: string;

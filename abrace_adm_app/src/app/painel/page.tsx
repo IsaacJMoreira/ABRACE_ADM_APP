@@ -15,10 +15,12 @@ import {
   MagicWandIcon,
 } from "@radix-ui/react-icons";
 import React, { useContext } from "react";
-
 import Sumary from "@/components/Panel/Sumary/Sumary";
 import ControlPanel from "@/components/Panel/ControlPanel/ControlPanel";
 import EventsCard from "@/components/EventsCard/EventsCard";
+import ManageEvents from "@/components/Panel/ManageEvets/ManageEvents";
+
+
 
 const page = () => {
   return (
@@ -66,7 +68,10 @@ const page = () => {
             <Text size="2">Adiciona, modifica e deleta pets no sistema</Text>
           </Tabs.Content>
           <Tabs.Content value="eventos">
-          <EventsCard />
+          
+          <ManageEvents/>
+
+
           </Tabs.Content>
           <Tabs.Content value="usuarios">
             <Text size="2">Adiciona, modifica e deleta usuários e administradores no sistema</Text>

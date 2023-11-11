@@ -1,62 +1,68 @@
 import EventCard from "@/components/EventCard/EventCard";
-import { Card, Flex, Heading, Separator } from "@radix-ui/themes";
-import React from "react";
-import EXAMPLEimg from "../../public/images/Volunteer.jpg";
+import { Card, Flex, Heading, ScrollArea, Separator } from "@radix-ui/themes";
+import React, { FC, MouseEventHandler, ReactNode, useEffect, useState } from "react";
+import { StaticImageData } from "next/image";
 
-let events = [
-  {
-    name: "Evento de Adoção 1",
-    URL: EXAMPLEimg,
-    ALT: "ALT DA IMAGEM",
-    date: "29/01/1993",
-    time: "23:30",
-    duration: "3h",
-    location: "Praça das Flores",
-    description:
-      "EVENTO FODA EVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODA",
-    linkToLocation: "www.link.com.br",
-  },
-  {
-    name: "Evento de Adoção 2",
-    URL: EXAMPLEimg,
-    ALT: "ALT DA IMAGEM",
-    date: "29/02/1993",
-    time: "00:30",
-    duration: "5h",
-    location: "Praça Luiza Távora",
-    description:
-      "EVENTO FODA EVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODAEVENTO FODA",
-    linkToLocation: "www.link.com.br",
-  },
-];
+interface MyProps {
+  children?: ReactNode;
+  name: string;
+  date: string;
+  time: string;
+  duration: string;
+  location: string;
+  description: string;
+  imgURL?: string;
+  linkToLocation: string;
+  URL: StaticImageData;
+  ALT: string;
+  eventID?: string;
+}
 
-const EventsCard = () => {
+interface dataArrayProps {
+  dataArray: Array<MyProps>;
+}
+
+const EventsCard: FC<dataArrayProps> = (props) => {
+ 
+  const [eventsArray, setEventsArray] = useState([] as MyProps[]);
+
+  useEffect(()=>{
+    setEventsArray(props.dataArray);
+  }, []);
+
+
   return (
-    <Card variant="surface">
+    <Card variant="surface" className="w-2/6 min-w-[400px]">
       <Flex direction="row" justify="between">
         <Heading color="amber">Eventos Cadastrados</Heading>
       </Flex>
 
       <Separator orientation="horizontal" size="4" />
       <br />
-      <Flex direction="column" gap="1">
-        {events.map((event) => {
-          return (
-            <EventCard
-              name={event.name}
-              URL={event.URL}
-              ALT={event.ALT}
-              date={event.date}
-              time={event.time}
-              duration={event.duration}
-              location={event.location}
-              description={event.description}
-              linkToLocation={event.linkToLocation}
-              deleterFunction={()=>alert("Ainda Não posso deletar")}
-            />
-          );
-        })}
-      </Flex>
+      <ScrollArea
+        type="always"
+        scrollbars="vertical"
+        style={{ height: "100%", maxHeight: 500 }}
+      >
+        <Flex direction="column" gap="1">
+          {props.dataArray.map((event) => {
+            return (
+              <EventCard
+                name={event.name}
+                URL={event.URL}
+                ALT={event.ALT}
+                date={event.date}
+                time={event.time}
+                duration={event.duration}
+                location={event.location}
+                description={event.description}
+                linkToLocation={event.linkToLocation}
+                deleterFunction={() => alert("Ainda não é possível executar esta função")}
+              />
+            );
+          })}
+        </Flex>
+      </ScrollArea>
     </Card>
   );
 };
