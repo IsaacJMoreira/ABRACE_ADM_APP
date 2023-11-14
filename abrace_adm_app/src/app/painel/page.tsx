@@ -19,6 +19,7 @@ import Sumary from "@/components/Panel/Sumary/Sumary";
 import ControlPanel from "@/components/Panel/ControlPanel/ControlPanel";
 import EventsCard from "@/components/EventsCard/EventsCard";
 import ManageEvents from "@/components/Panel/ManageEvets/ManageEvents";
+import ManagePets from "@/components/Panel/ManagePets/ManagePets";
 
 
 
@@ -65,7 +66,7 @@ const page = () => {
           </Tabs.Content>
 
           <Tabs.Content value="pets">
-            <Text size="2">Adiciona, modifica e deleta pets no sistema</Text>
+            <ManagePets/>
           </Tabs.Content>
           <Tabs.Content value="eventos">
           

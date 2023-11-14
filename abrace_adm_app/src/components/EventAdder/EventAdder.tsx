@@ -7,6 +7,7 @@ import {
   TextField,
   Tooltip,
   Text,
+  TextArea,
 } from "@radix-ui/themes";
 import { StaticImageData } from "next/image";
 import React, { FC, MouseEventHandler, ReactNode, useState } from "react";
@@ -141,18 +142,12 @@ const EventAdder:FC<DataArrayProps> = (props) => {
           <TextField.Slot>upload de imágem:</TextField.Slot>
           <TextField.Input value="MÉTODO PARA UPLOAD DE IMAGEM VERCEL BLOB" />
         </TextField.Root>
-        <TextField.Root>
-          <TextField.Slot>Descrição da imágem:</TextField.Slot>
-          <TextField.Input
-            value={newEvent.ALT}
-            onChange={(event) =>
+        <TextArea size='3' placeholder="Adicione uma descrição para o evento" value={newEvent.description} onChange={(event) =>
               setNewEvent({
                 ...newEvent,
-                ALT: event.target.value,
+                description: event.target.value,
               })
-            }
-          />
-        </TextField.Root>
+            }/>
       </Flex>
       <br />
       <Separator orientation="horizontal" size="4" />

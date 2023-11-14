@@ -13,6 +13,7 @@ import {
   Separator,
   Tooltip,
   TextField,
+  TextArea,
 } from "@radix-ui/themes";
 import NextImage, { StaticImageData } from "next/image";
 
@@ -28,8 +29,6 @@ import {
   Pencil1Icon,
   TrashIcon,
 } from "@radix-ui/react-icons";
-
-
 
 interface MyProps {
   children?: ReactNode;
@@ -75,7 +74,7 @@ const EventCard: FC<MyProps> = (props) => {
       <Flex direction="row" justify="between" gap="2">
         <Inset clip="padding-box" side="left">
           <NextImage
-            className="object-cover h-40 w-auto"
+            className="object-cover h-40 w-60"
             src={eventData.URL}
             alt={eventData.ALT}
           />
@@ -112,7 +111,13 @@ const EventCard: FC<MyProps> = (props) => {
             </Flex>
           </Box>
           <Box>
-            <Flex direction="column" justify="center" gap="1" align="center" className="h-full">
+            <Flex
+              direction="column"
+              justify="center"
+              gap="1"
+              align="center"
+              className="h-full"
+            >
               <Dialog.Root>
                 <Dialog.Trigger>
                   <Button color="tomato" variant="surface">
@@ -249,6 +254,17 @@ const EventCard: FC<MyProps> = (props) => {
                         }
                       />
                     </TextField.Root>
+                    <TextArea
+                      size="3"
+                      placeholder="Adicione uma descrição para o evento"
+                      value={updatedData.description}
+                      onChange={(event) =>
+                        setUpdatedData({
+                          ...updatedData,
+                          description: event.target.value,
+                        })
+                      }
+                    />
                   </Flex>
                   <br />
                   <Separator orientation="horizontal" size="4" />
