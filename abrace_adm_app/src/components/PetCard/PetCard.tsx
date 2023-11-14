@@ -80,7 +80,7 @@ const PetCard: FC<PetProps> = (props) => {
           <Box>
             <Flex direction="column" justify="start">
               <Heading color="lime">{petData.name}</Heading>
-              <Separator orientation="horizontal" size="4" />
+              <Separator orientation="horizontal" size="3" />
               <Text as="label" size="1" weight="bold" color="lime">
                 Espécie:
                 <Text as="span" size="3" weight="light" color="gray">
@@ -115,6 +115,20 @@ const PetCard: FC<PetProps> = (props) => {
             </Flex>
           </Box>
           <Box>
+            <Flex direction="column" justify="between" gap="4" align="end">
+              <Box>
+                {/* //TODO: add dialog to show adoption aplications */}
+                <Card variant="ghost" className="w-[150px]">
+                  <Flex direction="row" justify="between" align='center' gap="1">
+                    <Text as="div" size="1" weight='bold'>
+                      Pedidos de Adoção
+                    </Text>
+                    <Button size="3" variant="surface">3</Button>
+                  </Flex>
+                </Card>
+              </Box>
+              
+              <Box>
             <Flex
               direction="column"
               justify="center"
@@ -218,7 +232,7 @@ const PetCard: FC<PetProps> = (props) => {
                       </Select.Root>
                     </Flex>
                     <Flex direction="row" justify="start" gap="1">
-                    <TextField.Root>
+                      <TextField.Root>
                         <TextField.Slot>Cor:</TextField.Slot>
                         <TextField.Input
                           value={editedPetData.petFurColor}
@@ -329,8 +343,20 @@ const PetCard: FC<PetProps> = (props) => {
                         </Select.Content>
                       </Select.Root>
                     </Flex>
-                    <TextArea size='3' placeholder="Adicione uma descrição sobre o animal" value={editedPetData.petDescription} onChange={(event)=>setEditedPetData({...editedPetData, petDescription: event.target.value})}/>
-                    <Text as='div' color="tomato">ADICIONAR MÉTODO PARA UPLOAD DE IMAGENS</Text>
+                    <TextArea
+                      size="3"
+                      placeholder="Adicione uma descrição sobre o animal"
+                      value={editedPetData.petDescription}
+                      onChange={(event) =>
+                        setEditedPetData({
+                          ...editedPetData,
+                          petDescription: event.target.value,
+                        })
+                      }
+                    />
+                    <Text as="div" color="tomato">
+                      ADICIONAR MÉTODO PARA UPLOAD DE IMAGENS
+                    </Text>
                   </Flex>
                   <br />
                   <Separator orientation="horizontal" size="4" />
@@ -351,7 +377,11 @@ const PetCard: FC<PetProps> = (props) => {
                       </Button>
                     </Dialog.Close>
                     <Dialog.Close>
-                      <Button color="amber" variant="surface" onClick={()=>setEditedPetData(petData)}>
+                      <Button
+                        color="amber"
+                        variant="surface"
+                        onClick={() => setEditedPetData(petData)}
+                      >
                         VOLTAR
                       </Button>
                     </Dialog.Close>
@@ -360,6 +390,10 @@ const PetCard: FC<PetProps> = (props) => {
               </Dialog.Root>
             </Flex>
           </Box>
+            </Flex>
+          </Box>
+
+         
         </Flex>
       </Flex>
     </Card>
