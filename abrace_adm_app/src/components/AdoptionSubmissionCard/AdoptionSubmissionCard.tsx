@@ -48,7 +48,7 @@ const aptitudeBadge: AptitudeBadge ={
 
 const AdoptionSubmissionCard: FC<AdoptionSubmissionProps> = (props) => {
   const firstData: AdoptionSubmissionProps = {
-    userID: props.submissionDate,
+    userID: props.userID,
     userName: props.userName,
     userAptitude: props.userAptitude,
     submissionDate: props.submissionDate,
