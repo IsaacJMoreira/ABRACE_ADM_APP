@@ -30,6 +30,7 @@ interface PetProps {
   petDescription: string;
   petImgURL: StaticImageData;
   petImgALT: string;
+  adoptionSubmissions: number;
 }
 
 interface DataArrayProps {
@@ -53,6 +54,7 @@ const emptyPet = {
   petDescription: "",
   petImgURL: PETGENERIC,
   petImgALT: "generic",
+  adoptionSubmissions: 0,
 };
 
 
@@ -70,7 +72,7 @@ const PetAdder:FC<DataArrayProps> = (props) => {
   }
 
   return (
-    <Card className="w-3/5  min-w-[600px]">
+    <Card className="w-3/6  min-w-[600px]">
       <Heading color="lime">Adicionar Novo Animal</Heading>
       <Separator orientation="horizontal" size="4" />
       <br />

@@ -97,7 +97,7 @@ const EventAdder:FC<DataArrayProps> = (props) => {
             onChange={(event) =>
               setNewEvent({
                 ...newEvent,
-                date: event.target.value,
+                time: event.target.value,
               })
             }
           />

@@ -22,6 +22,7 @@ interface PetsProps {
   petDescription: string;
   petImgURL: StaticImageData;
   petImgALT: string;
+  adoptionSubmissions: number;
 }
 
 let pets: Array<PetsProps> = [
@@ -40,8 +41,8 @@ let pets: Array<PetsProps> = [
     petImgURL: CAT,
     petImgALT: "Imagem meramente ilustrativa",
     petAgeAproximate: true,
-    petSex: "M"
-
+    petSex: "M",
+    adoptionSubmissions: 1,
   },
   {
     name: "Totó",
@@ -58,7 +59,8 @@ let pets: Array<PetsProps> = [
     petImgURL: DOG,
     petImgALT: "Imagem meramente ilustrativa",
     petAgeAproximate: true,
-    petSex: "M"
+    petSex: "M",
+    adoptionSubmissions: 3,
   },
 ];
 

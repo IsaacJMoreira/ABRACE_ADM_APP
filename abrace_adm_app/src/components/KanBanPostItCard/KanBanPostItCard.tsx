@@ -187,7 +187,7 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                             </Text>
                             <br />
 
-                            <Flex direction="row" justify="between" gap="3">
+                            {/* <Flex direction="row" justify="between" gap="3">
                               <Button
                                 variant="soft"
                                 color="cyan"
@@ -205,7 +205,7 @@ const KanBanPostItCard: FC<MyProps> = (props) => {
                                   {props.eventName}
                                 </Button>
                               )}
-                            </Flex>
+                            </Flex> */}
                           </Flex>
                         </Box>
 

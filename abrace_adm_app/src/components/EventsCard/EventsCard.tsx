@@ -1,6 +1,19 @@
 import EventCard from "@/components/EventCard/EventCard";
-import { Card, Flex, Heading, ScrollArea, Separator } from "@radix-ui/themes";
-import React, { FC, MouseEventHandler, ReactNode, useEffect, useState } from "react";
+import {
+  Box,
+  Card,
+  Flex,
+  Heading,
+  ScrollArea,
+  Separator,
+} from "@radix-ui/themes";
+import React, {
+  FC,
+  MouseEventHandler,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
 import { StaticImageData } from "next/image";
 
 interface MyProps {
@@ -23,13 +36,11 @@ interface dataArrayProps {
 }
 
 const EventsCard: FC<dataArrayProps> = (props) => {
- 
   const [eventsArray, setEventsArray] = useState([] as MyProps[]);
 
-  useEffect(()=>{
+  useEffect(() => {
     setEventsArray(props.dataArray);
   }, []);
-
 
   return (
     <Card variant="surface" className="w-2/6 min-w-[400px]">
@@ -44,24 +55,28 @@ const EventsCard: FC<dataArrayProps> = (props) => {
         scrollbars="vertical"
         style={{ height: "100%", maxHeight: 500 }}
       >
-        <Flex direction="column" gap="1">
-          {props.dataArray.map((event) => {
-            return (
-              <EventCard
-                name={event.name}
-                URL={event.URL}
-                ALT={event.ALT}
-                date={event.date}
-                time={event.time}
-                duration={event.duration}
-                location={event.location}
-                description={event.description}
-                linkToLocation={event.linkToLocation}
-                deleterFunction={() => alert("Ainda não é possível executar esta função")}
-              />
-            );
-          })}
-        </Flex>
+        <Box p="2" pr="8">
+          <Flex direction="column" gap="1">
+            {props.dataArray.map((event) => {
+              return (
+                <EventCard
+                  name={event.name}
+                  URL={event.URL}
+                  ALT={event.ALT}
+                  date={event.date}
+                  time={event.time}
+                  duration={event.duration}
+                  location={event.location}
+                  description={event.description}
+                  linkToLocation={event.linkToLocation}
+                  deleterFunction={() =>
+                    alert("Ainda não é possível executar esta função")
+                  }
+                />
+              );
+            })}
+          </Flex>
+        </Box>
       </ScrollArea>
     </Card>
   );

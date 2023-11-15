@@ -55,7 +55,7 @@ const KanBanBoardCard = () => {
         >
           <Card
             variant="ghost"
-            className="m-1 w-2/5 bg-gradient-to-br from-[#F3B4B080] to-[#e66a6380]"
+            className="m-1 w-2/5 bg-gradient-to-br from-[#F3B4B030] to-[#e66a6330]"
           >
             <Flex direction="column" align="center" justify="between" gap="3">
               <Heading size="5" align="center" color="tomato">
@@ -112,7 +112,7 @@ const KanBanBoardCard = () => {
             </Flex>
           </Card>
           <Card
-            className=" m-1  w-2/5 bg-gradient-to-br from-[#FFF9C480] to-[#F7EB7A80]"
+            className=" m-1  w-2/5 bg-gradient-to-br from-[#FFF9C430] to-[#F7EB7A30]"
             variant="ghost"
           >
             <Flex direction="column" align="center" justify="between" gap="3">
@@ -159,7 +159,7 @@ const KanBanBoardCard = () => {
             </Flex>
           </Card>
           <Card
-            className=" m-1 w-2/5 bg-gradient-to-br from-[#EAF4E380] to-[#96D27980]"
+            className=" m-1 w-2/5 bg-gradient-to-br from-[#EAF4E330] to-[#96D27930]"
             variant="ghost"
           >
             <Flex direction="column" align="center" justify="between" gap="3">

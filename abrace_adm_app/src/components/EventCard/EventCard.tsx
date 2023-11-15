@@ -70,11 +70,11 @@ const EventCard: FC<MyProps> = (props) => {
   }, []);
 
   return (
-    <Card variant="classic">
+    <Card variant="classic" >
       <Flex direction="row" justify="between" gap="2">
         <Inset clip="padding-box" side="left">
           <NextImage
-            className="object-cover h-40 w-60"
+            className="object-cover h-40 w-40"
             src={eventData.URL}
             alt={eventData.ALT}
           />
