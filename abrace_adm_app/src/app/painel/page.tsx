@@ -20,6 +20,7 @@ import ControlPanel from "@/components/Panel/ControlPanel/ControlPanel";
 import EventsCard from "@/components/EventsCard/EventsCard";
 import ManageEvents from "@/components/Panel/ManageEvets/ManageEvents";
 import ManagePets from "@/components/Panel/ManagePets/ManagePets";
+import ManageUsers from "@/components/Panel/ManageUsers/ManageUsers";
 
 
 
@@ -75,7 +76,7 @@ const page = () => {
 
           </Tabs.Content>
           <Tabs.Content value="usuarios">
-            <Text size="2">Adiciona, modifica e deleta usuários e administradores no sistema</Text>
+            <ManageUsers/>
           </Tabs.Content>
         </Box>
       </Tabs.Root>
