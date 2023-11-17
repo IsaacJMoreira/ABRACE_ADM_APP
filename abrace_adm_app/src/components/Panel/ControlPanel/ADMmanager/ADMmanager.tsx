@@ -19,8 +19,8 @@ import React from "react";
 
 const ADMmanager = () => {
   return (
-    <Card className="w-fit">
-      <Flex direction="column" justify="between" gap="1">
+    <Card className="w-1/3" style={{ height: "100%" }} variant="surface">
+      <Flex direction="column" justify="between" gap="3">
         <Flex direction="row" justify="between" align="center">
           <Heading color="amber" size="4">
             Administradores

@@ -36,14 +36,14 @@ const ADMcard: FC<ADMCardProps> = (props) => {
   const { icon } = badgeSelector[props.credential];
 
   return (
-    <Card>
+    <Card variant="classic">
       <Flex direction="row" justify="between" align="center" gap="2">
         <Box>
           <Flex direction="row" align="center" gap="1">
             <NextImage
               src={icon}
               alt="credencial do administrador"
-              height="30"
+              className="w-12 h-100"
             />
             <Separator orientation="vertical" size="3" />
           </Flex>
@@ -61,7 +61,7 @@ const ADMcard: FC<ADMCardProps> = (props) => {
 
               <AlertDialog.Root>
                 <AlertDialog.Trigger disabled={false}>
-                  <Button variant="surface" size="1" color="amber">
+                  <Button variant="surface"  color="amber">
                     {props.credential === "ADM1" ? "PROMOVER" : "REBAIXAR"}
                   </Button>
                 </AlertDialog.Trigger>
@@ -77,7 +77,8 @@ const ADMcard: FC<ADMCardProps> = (props) => {
                     Administradores de <Strong>Nível 2</Strong> possuem perissão para modificar
                     todas as informações no APP, inlusive relacionadas à
                     pagamentos. É de extrema importância que esta credencial só
-                    seja concedida à membros de confiança.
+                    seja concedida à membros de confiança.  Administradores de <Strong>Nível 1</Strong> não são autorizado a modificar as
+                  informações financeiras da ONG ou excluir outro administrador.
                   </AlertDialog.Description>
                   <br />
                   <Separator orientation="horizontal" size="4" />
@@ -99,7 +100,7 @@ const ADMcard: FC<ADMCardProps> = (props) => {
 
               <AlertDialog.Root>
                 <AlertDialog.Trigger disabled={false}>
-                  <Button variant="surface" size="1" color="tomato">
+                  <Button variant="surface"  color="tomato">
                     EXCLUIR
                   </Button>
                 </AlertDialog.Trigger>

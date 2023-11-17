@@ -261,7 +261,7 @@ const DonationLocationsCard = () => {
   }
 
   return (
-    <Card variant="surface" style={{ height: "100%" }}>
+    <Card variant="surface" style={{ height: "100%" }} className="w-1/3">
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
           direction="row"
