@@ -83,7 +83,7 @@ const ADMmanager = () => {
                 </Text>
                 <Text as="div" size="1" color="tomato">
                   <Strong>Nível 1</Strong> - não autorizado a modificar as
-                  informações financeiras da ONG ou excluir outro administrador
+                  informações financeiras da ONG ou excluir outro administrador.
                 </Text>
                 <Text as="div" size="1" color="tomato">
                   <Strong>Nível 2</Strong> - possui permissão para modificar
