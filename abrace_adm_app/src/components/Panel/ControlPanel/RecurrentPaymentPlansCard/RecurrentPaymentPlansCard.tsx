@@ -97,14 +97,13 @@ const addNewPlan = (
           </TextField.Root>
           <Box>
             <Flex direction="row" justify="between" align="center" gap="3">
-            <TextField.Root className="w-full">
+              <TextField.Root className="w-full">
                 <TextField.Slot>
                   <Text as="div" size="1" weight="bold" color="lime">
                     Valor:
                   </Text>
                 </TextField.Slot>
                 <TextField.Input
-                  
                   value={newPlan.value}
                   onChange={(event) =>
                     setNewPlan({ ...newPlan, value: event.target.value })
@@ -118,7 +117,6 @@ const addNewPlan = (
                   </Text>
                 </TextField.Slot>
                 <TextField.Input
-                  
                   value={newPlan.duration}
                   onChange={(event) =>
                     setNewPlan({ ...newPlan, duration: event.target.value })
@@ -136,7 +134,9 @@ const addNewPlan = (
                 <Select.Trigger />
                 <Select.Content>
                   <Select.Group>
-                    <Select.Item value="ND" disabled>selecionar</Select.Item>
+                    <Select.Item value="ND" disabled>
+                      selecionar
+                    </Select.Item>
                     <Select.Item value="mensal">mensal</Select.Item>
                     <Select.Item value="anual">anual</Select.Item>
                     <Select.Item value="vitalicio">vitalício</Select.Item>
@@ -213,11 +213,7 @@ const RecurrentPaymentPlansCard = () => {
   }
 
   return (
-    <Card
-      variant="surface"
-      className="w-2/3"
-      style={{ height: '100%' }}
-    >
+    <Card variant="surface" className="w-2/3" style={{ height: "100%" }}>
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
           direction="row"
@@ -233,24 +229,30 @@ const RecurrentPaymentPlansCard = () => {
         </Flex>
 
         <Separator orientation="horizontal" size="4" />
-        <ScrollArea type="always" scrollbars="vertical" style={{ height: "100%", maxHeight: 500 }}>
+        <ScrollArea
+          type="always"
+          scrollbars="vertical"
+          style={{ height: "100%", maxHeight: 500 }}
+        >
           <Box p="2" pr="8">
-            {plans.map((plan) => {
-              return (
-                <>
-                  <RecurrentPaymentPlanCard
-                    name={plan.name}
-                    code={plan.code}
-                    frequency={plan.frequency}
-                    value={plan.value}
-                    duration={plan.duration}
-                    onClickFunction={() =>
-                      setPlans(deleteLocation(plans, plan))
-                    }
-                  />
-                </>
-              );
-            })}
+            <Flex direction="column" justify="between" gap="1">
+              {plans.map((plan) => {
+                return (
+                  <>
+                    <RecurrentPaymentPlanCard
+                      name={plan.name}
+                      code={plan.code}
+                      frequency={plan.frequency}
+                      value={plan.value}
+                      duration={plan.duration}
+                      onClickFunction={() =>
+                        setPlans(deleteLocation(plans, plan))
+                      }
+                    />
+                  </>
+                );
+              })}
+            </Flex>
           </Box>
         </ScrollArea>
       </Flex>

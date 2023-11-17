@@ -76,7 +76,7 @@ const addNewPlace = (
       <Dialog.Trigger>
         <Button size="1" color="tomato" variant="surface">
           <Tooltip content="Adicionar um local de coleta">
-            <Flex direction='row' gap='1' >
+            <Flex direction="row" gap="1">
               Adicionar
               <Separator orientation="vertical" size="1" />
               <PlusIcon />
@@ -187,12 +187,20 @@ const addNewPlace = (
         <br />
         <Flex direction="row" justify="between" gap="5" align="center">
           <Dialog.Close>
-            <Button color="lime" variant="surface" onClick={() => addNewLocation(locations)}>
+            <Button
+              color="lime"
+              variant="surface"
+              onClick={() => addNewLocation(locations)}
+            >
               ADICIONAR
             </Button>
           </Dialog.Close>
           <Dialog.Close>
-            <Button color="amber" variant="surface" onClick={() => setNewPlace(emptyProps)}>
+            <Button
+              color="amber"
+              variant="surface"
+              onClick={() => setNewPlace(emptyProps)}
+            >
               VOLTAR
             </Button>
           </Dialog.Close>
@@ -253,7 +261,7 @@ const DonationLocationsCard = () => {
   }
 
   return (
-    <Card variant="surface" className="w-2/3" style={{height: "100%" }}>
+    <Card variant="surface" className="w-2/3" style={{ height: "100%" }}>
       <Flex direction="column" justify="between" align="center" gap="3">
         <Flex
           direction="row"
@@ -269,25 +277,31 @@ const DonationLocationsCard = () => {
         </Flex>
 
         <Separator orientation="horizontal" size="4" />
-        <ScrollArea type="always" scrollbars="vertical" style={{ height: "100%", maxHeight: 500 }}>
+        <ScrollArea
+          type="always"
+          scrollbars="vertical"
+          style={{ height: "100%", maxHeight: 500 }}
+        >
           <Box p="2" pr="8">
-            {locations.map((location) => {
-              return (
-                <DonationPlacesCard
-                  name={location.name}
-                  street={location.street}
-                  number={location.number}
-                  neighborhood={location.neighborhood}
-                  city={location.city}
-                  state={location.state}
-                  complement={location.complement}
-                  linkToMaps={location.linkToMaps}
-                  onClickFunction={() =>
-                    setLocations(deleteLocation(locations, location))
-                  }
-                />
-              );
-            })}
+            <Flex direction="column" justify="between" gap="1">
+              {locations.map((location) => {
+                return (
+                  <DonationPlacesCard
+                    name={location.name}
+                    street={location.street}
+                    number={location.number}
+                    neighborhood={location.neighborhood}
+                    city={location.city}
+                    state={location.state}
+                    complement={location.complement}
+                    linkToMaps={location.linkToMaps}
+                    onClickFunction={() =>
+                      setLocations(deleteLocation(locations, location))
+                    }
+                  />
+                );
+              })}
+            </Flex>
           </Box>
         </ScrollArea>
       </Flex>

@@ -66,7 +66,7 @@ const DonationPlacesCard: FC<MyProps> = (props) => {
     });
   }, []);
   return (
-    <Card>
+    <Card variant="classic">
       <Flex direction="row" justify="between" gap="3" align="center">
         <Box>
           <Flex direction="row" gap="3" justify="between" align="center">
