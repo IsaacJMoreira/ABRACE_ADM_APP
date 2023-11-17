@@ -105,7 +105,7 @@ const ADMcard: FC<ADMCardProps> = (props) => {
                 </AlertDialog.Trigger>
                 <AlertDialog.Content size="1">
                   <AlertDialog.Title size="3">
-                    Tem certeza que deseja excluir {props.name}?
+                    Tem certeza que deseja EXCLUIR {props.name}?
                   </AlertDialog.Title>
                   <AlertDialog.Description size="1">
                     Esta ação não poderá ser desfeita. Depois de excluir{" "}

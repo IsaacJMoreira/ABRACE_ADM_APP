@@ -86,7 +86,7 @@ const ADMmanager = () => {
                   informações financeiras da ONG ou excluir outro administrador
                 </Text>
                 <Text as="div" size="1" color="tomato">
-                  <Strong>Nível 2</Strong> - possui perissão para modificar
+                  <Strong>Nível 2</Strong> - possui permissão para modificar
                   todas as informações no APP, inlusive relacionadas à
                   pagamentos. É de extrema importância que esta credencial só
                   seja concedida à membros de confiança.
